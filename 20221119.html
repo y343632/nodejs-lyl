@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let data = [
+            { id: 1, level: 'A', rate: 1},
+            { id: 2, level: 'B', rate: 3},
+            { id: 3, level: 'A', rate: 4},
+            { id: 4, level: 'C', rate: 2},
+            { id: 5, level: 'A', rate: 1},
+        ];
+
+        let result = data
+        .filter((item) => item.level === 'A')
+        .reduce((acc, item)=> acc + item.rate, 0);
+
+        console.log(result);
+    </script>
+</body>
+</html>
