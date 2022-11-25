@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>mouse-event</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <style>
+    .box{
+        width:200px;
+        height:200px;
+        background: blue;
+        transition: .4s;
+    }
+  </style>
+  <body>
+      <div class="container">
+        
+        <button class="btn btn-secondary" id="button">
+            button
+        </button>
+        <div class="py-2">
+            <div id="box" class="box" style="background:blue;"></div>
+        </div>
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script>
+    $("#button").click(function(){
+        console.log("click")
+    })
+    $("#button").dblclick(function(){
+        console.log("double click")
+    })
+    $("#button").contextmenu(function(){
+        console.log("contextmenu")
+    })
+    $("#button").mousedown(function(){
+        console.log("mouse down")
+    })
+    $("#button").mouseup(function(){
+        console.log("mouse up")
+    })
+    // $("#button").mouseenter(function(){
+    //     console.log("mouse enter")
+    // })
+    // $("#button").mouseleave(function(){
+    //     console.log("mouse leave")
+    // })
+    // $("#button").hover(function(){
+    //     console.log("hover")
+    // })
+        $('#button').hover(function(){
+            console.log("mouse enter")
+            $("#box").css("background" ,"lightyellow")
+        },function(){
+            console.log("mouse leave")
+            $("#box").css("background" ,"lightblue")
+        })
+
+</script>  
+</body>
+  
+</html>
