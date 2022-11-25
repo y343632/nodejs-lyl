@@ -9,32 +9,19 @@ $<!doctype html>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
-  
+  <style>
+
+        .box{
+            width:100px;
+            height:100px;
+            background:pink;
+            margin:10px;
+        }
+  </style>
   <body>
       <div class="container">
-         <table class="table table-bordered">
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td class="not">cla</td>
-                <td></td>
-                <td><div class="inside"></div></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><div class="inside"></div></td>
-                <td></td>
-                <td></td>
-                <td>James Harden</td>
-            </tr>
-         </table>
+        <div class="box"></div>
+        <div class="box d-non"></div>
       </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -42,20 +29,7 @@ $<!doctype html>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script>
-    // $("td:eq(2)").css("background","yellow")
-    // $("td:even").css("background","red")
-    // $("td:odd").css("background","pink")
-    // $("td:first").css("background","green")
-    // $("td:last").css("background","blue")
-    // $("td:gt(4)").css("background","lightblue")
-    // $("td:gt(12)").css("background","indigo")
-    // $(":header").css("background","indigo")
-    $("td:not(.not").css("background","yellow")
-    $("td:not('James')").css("background","pink")
-    $("td:emypte").css("background","orange")
-    $("td:.inside").css("background","blue")
-  </script>
+    $(".box:hidden").css("background","red")
   </script>
 </body>
-  </script>
 </html>
