@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Slider</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/fontawesome-free-6.2.0-web/css/all.min.css">
+    <style>
+        .wrapper{
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .slider-wrap{
+            --slider-height: 360px;
+            height: var(--slider-height);
+            background: #000;
+            overflow: hidden;
+            /* left:0;
+            top:0; */
+            
+        }
+        .slider{
+            left:0px;
+            transition: .7s;
+        }
+        .slider li{
+            width: 800px;
+            height: var(--slider-height);
+        }
+        .slider li img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .pages{
+            bottom:10px;
+            margin-bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .pages li{
+            width: 30px;
+            height: 10px;
+            border: 1px solid #fff;
+            margin: 0 5px;
+        }
+        .pages li:hover{
+            background: #fff;
+        }
+        .arrow-btn{
+            position: absolute;
+            display: flex;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            width: 38px;
+            cursor: pointer;
+            font-size: 24px;
+            opacity: .7;
+        }
+        .arrow-btn:hover{
+            opacity: 1;
+        }
+        .arrow-btn i{
+            color: #fff;
+        }
+        .btn-left{
+            left:0;
+        }
+        .btn-right{
+            right: 0;
+        }
+    </style>
+  </head>
+  <body>
+      <div class="wrapper">
+        <div class="slider-wrap position-relative">
+            <ul class="slider list-unstyled d-flex position-absolute" id="slider">
+                <li><img src="https://images.pexels.com/photos/3908197/pexels-photo-3908197.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+                <li><img src="https://images.pexels.com/photos/8125687/pexels-photo-8125687.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+                <li><img src="https://images.pexels.com/photos/6952392/pexels-photo-6952392.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+                <li><img src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+                <li><img src="https://images.pexels.com/photos/845802/pexels-photo-845802.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+            </ul>
+            <ul class="list-unstyled position-absolute pages" id="pages">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <a role="button" id="goPrev"  class="arrow-btn btn-left">
+                <i class="fa-solid fa-chevron-left"></i>
+            </a>
+            <a role="button" id="goNext"  class="arrow-btn btn-right">
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+            
+        </div>
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <script>
+        let sliderWidth=800;
+        let sliderIndex=0;
+        let sliderCount=$("#slider li").
+        lenth;
+        let lastIndex=sliderCount-1;
+        // console.log(sliderCount)
+
+        $("#pages li").eq(0).css("background", "white")
+        $("#pages li").mouseenter(function(){
+            // console.log("hover")
+            // 0-(sliderIndex*sliderWidth)
+            sliderIndex=$(this).index();
+            // console.log(sliderIndex)
+            // let sliderMove=0-(sliderIndex*sliderWidth);
+            // console.log(sliderMove)
+            // $("#slider").css("left", sliderMove);
+            // $(this).css("background", "white")
+            // .siblings().css("background", "none")
+        })
+
+        $("#goPrev").click(function(){
+            // console.log("prev")
+            sliderIndex--
+            if(sliderIndex<0){
+                sliderIndex=lastIndex;
+            }
+
+            goSlider();
+            // let sliderMove=0-(sliderIndex*sliderWidth);
+            // $("#slider").css("left",sliderMove);
+            // $("#pages li").eq(sliderIndex).css("background","white")
+            // .sibling().css("background","none")
+        })
+        $("#goNext").click(function(){
+            // console.log("next")
+            sliderIndex++;
+            if(sliderIndex>3){
+                sliderIndex=0;
+            }
+            goSlider();
+        })
+
+        function goSlider(){
+            let sliderMove=0-(sliderIndex*sliderWidth);
+            $("#slider").css("left",sliderMove);
+            $("#pages li").eq(sliderIndex).css("background","white")
+            .sibling().css("background","none")
+        }
+      </script>
+  </body>
+</html>

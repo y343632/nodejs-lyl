@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Tree Travelsal</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <style>
+    .contanier{
+        width:100px;
+        height:100px;
+        margin: 50px auto;
+    }
+    .box{
+        width:20px;
+        height:20px;
+        background: pink;
+        display: inline-block;
+        margin: 5px;
+        transition: .4s;
+    }
+  </style>
+  <body>
+    <div class="contanier">
+        <table class= "table table-bordered">
+            <tr>
+                <td><div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    <div class="box"></div>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <div class="box"></div>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><div class="box"></div></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td><div class="box"></div></td>
+                <td><div class="box"></div></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="stop"></td>
+                <td><div class="box"></div></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script>
+    // $("td").children().css("background","red")
+    // $("td>*").css("background","red")
+    // $("td").children(".box").css("background","red")
+    // $("td").find("box").css("background","red")
+    // $("td").click(function(){
+    //     // console.log("click")
+    //     //this
+    //     $(this).find(".box").css("background","red")
+    // })
+    // $(".box").click(function(){
+    //     // console.log("click")
+    // //   $(this).parentsUntil("tr").css("background","lightblue")
+    // $(this).closest("tr").css("background","lightblue")
+        
+    // })
+
+    $("td").click(function(){
+        // // console.log("click")
+        // $(this).next().css
+        // ("background","blue")
+        // $(this).nextUntil(".stop").css
+        // ("background","blue")
+        // $(this).prev().css("background" , "green")
+        // $(this).prevAll().css("background" , "green")
+
+        // 合併
+        // $(this).next().css("background","green")
+        // $(this).next().css("background","red")
+         // 合併
+        //  $(this).next().css("baclground","green").prev().prev().css("background","yellow")
+
+        // //naxt pre
+        // $(this).css("background","red")
+        // .next().css("background","green")
+        // .end().prev().css("background","yellow")
+
+        //siblings自己以外的被選取
+        // $(this).css("background","pink").siblings().css("background","lightyellow")
+
+        $(this).css("background","pink").siblings().css("background","lightyellow")
+        .end().css("background","lightblue")
+
+    })
+
+  </script>
+</body>
+</html>
