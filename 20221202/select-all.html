@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>select-all</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+      <div class="container">
+        <table class="table table-bordered">
+            <thead>
+                <th>
+                <input type="cheackbox" id="checkAll"></th>
+                </th>
+                <th>name</th>
+                <th>email</th>
+                <th>phone</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="cheackbox" id="checkAll"></td>
+                    <td>John</td>
+                    <td>John@123</td>
+                    <td>09123456789</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td><input type="cheackbox"></td>
+                    <td>John</td>
+                    <td>John@123</td>
+                    <td>09123456789</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td><input type="cheackbox"></td>
+                    <td>John</td>
+                    <td>John@123</td>
+                    <td>09123456789</td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        //資料數量
+        let dataCount=$("tbody tr").lenght;
+        //console.log(dataCount)
+        $("#checkAll").click(function(){
+            let checked=$(this).prop("checked")
+            if(checked){
+                $("tr").addClass("active");
+                $(":checkbox").prop("checked",false)
+            }
+        })
+        $(":checkbox").click(function(){
+            let checked=$(this).prop("checked")
+            if(checked){
+                $(this).closest("tr").addClass("active")
+
+            }else{
+                $(this).closest("tr").
+                removeClass("active")
+            }
+            // $(":checkbox:not(:checked)").
+            // closest("tr")
+            let checkedCount=$("tbody:checked").length;
+            // console.log(checkedCount)
+            if(cheackedCount===dataCount){
+                $("#checkAll").prop("checked",true)
+            }else{
+                $("#checkAll").prop("checked",false)
+            }
+        })
+    </script>
+  </body>
+</html>
