@@ -1,10 +1,8 @@
-function sum(arr){
-    var total=0
-    for (var i =0; i<arr.length; i++){
-        total+=arr[i]
+function sum(n){
+    let sum = 0;
+    for (let i = 1; i<=n; i++){
+        sum+= i;
     }
-    return total
-
+    return sum;
 }
-var data=[1,2,5]
-console.log(sum(data));
+console.log(sum(5));
