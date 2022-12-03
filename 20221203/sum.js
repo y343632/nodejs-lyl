@@ -6,5 +6,5 @@ function sum(arr){
     return total
 
 }
-var data=[1,2,3]
+var data=[1,2,5]
 console.log(sum(data));
