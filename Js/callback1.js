@@ -14,6 +14,6 @@ let doWork = function (job, timer, cb) {
   doWork('吃早餐', 5000, (err, data) => {
     console.log(data);
   });
-  doWork('寫功課!', 3000, (err, data) => {
+  doWork('寫功課', 3000, (err, data) => {
     console.log(data);
   });
