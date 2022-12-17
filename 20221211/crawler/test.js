@@ -9,7 +9,7 @@ let connection = await mysql2.createConnection({
     user:"admin",
    
     database:"stock_mfee31",
-}) ;
+});
 
 //簡單查詢
 
